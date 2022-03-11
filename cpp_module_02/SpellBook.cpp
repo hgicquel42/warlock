@@ -25,5 +25,7 @@ void	SpellBook::forgetSpell(const string& name)
 
 ASpell*	SpellBook::createSpell(const string& name)
 {
-	return (this->spells.find(name)->second->clone());
+	map<string, ASpell*>::iterator position = this->spells.find(name);
+	if (position == this->spells.end()) return (NULL);
+	return (position->second->clone());
 }

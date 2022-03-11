@@ -49,6 +49,7 @@ void	Warlock::forgetSpell(string name)
 void	Warlock::launchSpell(string name, ATarget& target)
 {
 	ASpell* spell = this->spells.createSpell(name);
+	if (!spell) return ;
 	spell->launch(target);
 	delete spell;
 }

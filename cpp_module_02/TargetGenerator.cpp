@@ -25,5 +25,7 @@ void	TargetGenerator::forgetTargetType(const string& type)
 
 ATarget*	TargetGenerator::createTarget(const string& type)
 {
-	return (this->targets.find(type)->second->clone());
+	map<string, ATarget*>::iterator position = this->targets.find(type);
+	if (position == this->targets.end()) return (NULL);
+	return (position->second->clone());
 }

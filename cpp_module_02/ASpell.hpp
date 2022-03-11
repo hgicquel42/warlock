@@ -10,7 +10,7 @@ using namespace std;
 
 class ASpell
 {
-	private:
+	protected:
 		string	name;
 		string	effects;
 
